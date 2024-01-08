@@ -60,6 +60,7 @@ export default function Register(){
                         onChange={(e) => setConfirmPassword(e.target.value)}
                     />
                 </label>
+                <button className="btnForm">Cadastrar</button>
             </form>
             {error}
         </div>
