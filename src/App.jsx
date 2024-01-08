@@ -6,9 +6,9 @@ function App() {
 
   return (
     <>
-      <div className="container">
+      <div>
         <BrowserRouter>
-              <div className="container">
+              <div>
                 <Routes>
                   <Route path="/" element={<Home/>}/>
                 </Routes>
