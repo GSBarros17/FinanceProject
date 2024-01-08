@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom"
 import { FaBars } from "react-icons/fa";
 import { useState, useEffect, useRef } from "react"
-import styles from "./Nav.module.css"
+import styles from "./Navbar.module.css"
 import logo from "../img/logo.svg"
 
-export default function Nav(){
+export default function Navbar(){
     
     const [hideNavbar, setHideNavbar] = useState("false")
 
