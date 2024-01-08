@@ -1,0 +1,39 @@
+.containerHome{
+    margin-top: 4em;
+    padding: 1em 1em;
+    text-align: center;
+}
+
+.containerHome h1{
+    font-size: 2.5rem;
+    margin-bottom: 0.5em;
+}
+
+.containerHome h1 span {
+    background-color: #171717;
+    color: #ffffff;
+    text-decoration: underline #FFD00D;
+    padding: 0 0.2em;
+}
+
+.containerHome p {
+    margin-bottom: .5em;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #5b5b5b;
+}
+
+.containerHome a {
+    margin: 1em;
+}
+
+.imgHome{
+    width: 15em;
+    margin: 1em 0;
+}
+
+@media screen and (max-width: 800px){
+    .containerHome{
+        padding: 0em 1em;
+    }
+}
