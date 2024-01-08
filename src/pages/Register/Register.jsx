@@ -17,7 +17,7 @@ export default function Register(){
 
     return(
         <div className={styles.registerContainer}>
-            <h1>Cadastre-se ao Finance</h1>
+            <h1>Cadastre-se no <span>Finance Project</span></h1>
             <p>Crie projetos e acompanhe o seu desenvolvimento!</p>
             <form onSubmit={handleSubmit}>
                 <label>
