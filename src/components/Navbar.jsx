@@ -57,6 +57,9 @@ export default function Navbar(){
                         <Link to="/Contact">Contato</Link>
                     </li>
                     <li onClick={handleLinkClick}>
+                        <Link to="/Register">Criar Conta</Link>
+                    </li>  
+                    <li onClick={handleLinkClick}>
                         <Link to="/Login">Login</Link>
                     </li>  
                 </ul>
