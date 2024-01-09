@@ -45,17 +45,15 @@
 
 @media screen and (max-width: 800px){
     .welcomeContainer{
-        margin-top: 80px;
+        margin-top: 2em;
     }
 
     .welcomeCard{
         text-align: center;
     }
-}
-  
-@media screen and (max-width: 800px){
-    .welcomeCard img{
-        width: 50%;
+
+    .welcomeCard h1{
+        margin: 0;
     }
 
     .linksContainer{
@@ -64,3 +62,4 @@
         padding: 0;
     }
 }
+  
