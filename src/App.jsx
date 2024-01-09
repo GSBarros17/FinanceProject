@@ -10,7 +10,9 @@ import Register from './pages/Register/Register'
 import Login from './pages/Login/Login'
 import Company from './pages/Company/Company'
 import Contact from './pages/Contact/Contact'
+import Welcome from './pages/Welcome/Welcome'
 import './App.css'
+
 
 
 
@@ -46,8 +48,9 @@ function App() {
                 <div className="container">
                   <Routes>
                     <Route path="/" element={<Home/>}/>
-                    <Route path="/Register" element={!user ? <Register/> : <Navigate to="/"/>}/>
+                    <Route path="/Register" element={!user ? <Register/> : <Navigate to="/Welcome"/>}/>
                     <Route path="/Login" element={!user ? <Login/> : <Navigate to="/"/>}/>
+                    <Route path="/Welcome" element={user ? <Welcome/> : <Navigate to="/Login"/>}/>
                     <Route path="/Company" element={<Company/>}/>
                     <Route path="/Contact" element={<Contact/>}/>
                   </Routes>
