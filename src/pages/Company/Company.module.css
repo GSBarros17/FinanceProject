@@ -10,3 +10,9 @@
     color: #ffffff;
     text-decoration: underline #FFD00D;
 }
+
+@media screen and (max-width: 800px){
+    .companyContainer{
+        margin-top: 4em;
+    }
+}
