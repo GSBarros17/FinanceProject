@@ -3,3 +3,20 @@
     margin-bottom: 2em;
     text-align: center;
 }
+
+.registerContainer h1{
+    margin-bottom: 0em;
+}
+
+.registerContainer h1 span{
+    padding: 0.1em;
+    background-color: #191919;
+    color: #ffffff;
+    text-decoration: underline #FFD00D;
+}
+
+@media screen and (max-width: 600px){
+    .registerContainer{
+        margin-top: 5em;
+    }
+}
