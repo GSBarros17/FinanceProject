@@ -77,7 +77,7 @@ input:focus{
 }
 
 .err{
-  width: 15%;
+  width: 25%;
   margin: 1em auto;
   background-color: #d47c7c;
   font-weight: bold;
@@ -88,7 +88,7 @@ input:focus{
 }
 
 .success{
-  width: 15%;
+  width: 25%;
   margin: 1em auto;
   background-color: #7dcd76;
   font-weight: bold;
@@ -110,4 +110,20 @@ textarea {
 
 textarea:focus {
   opacity: 1;
+}
+
+@media screen and (max-width: 600px){
+  form{
+    width: 70%;
+    margin: 0 auto;
+  }
+  
+  .err{
+    width: 50%;
+  }
+  
+  .success{
+    width: 50%;
+  }
+  
 }
