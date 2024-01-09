@@ -6,6 +6,7 @@ import {
     sendPasswordResetEmail,
     signOut
 } from "firebase/auth"
+import { app } from "../firebase/config"
 import {useState, useEffect} from "react"
 
 export default function useAuthentication (){
