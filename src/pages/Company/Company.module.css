@@ -1,0 +1,12 @@
+.companyContainer{
+    margin-top: 6em;
+    margin-bottom: 2em;
+    padding: 0 2em;
+}
+
+.companyContainer h1 span{
+    padding: 0.1em;
+    background-color: #191919;
+    color: #ffffff;
+    text-decoration: underline #FFD00D;
+}
