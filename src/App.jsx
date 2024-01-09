@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 import Home from "./pages/Home/Home"
 import Register from './pages/Register/Register'
+import Login from './pages/Login/Login'
 import './App.css'
 
 
@@ -17,6 +18,7 @@ function App() {
                 <Routes>
                   <Route path="/" element={<Home/>}/>
                   <Route path="/Register" element={<Register/>}/>
+                  <Route path="/Login" element={<Login/>}/>
                 </Routes>
               </div>
               <Footer/>
