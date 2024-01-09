@@ -87,7 +87,7 @@ export default function Login(){
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </label>
-                {!loading && <button onClick={recoverPasswordUser} className={styles.recoverPassword}>Recuperar senha</button>}
+                <button onClick={recoverPasswordUser} className={styles.recoverPassword}>Recuperar senha</button>
                 {!loading && <button className="btnForm">Entrar</button>}
                 {loading && <button className="btnForm">Aguarde...</button>}
             </form>

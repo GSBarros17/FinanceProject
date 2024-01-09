@@ -1,0 +1,30 @@
+.containerLogin{
+    margin-top: 6em;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+.containerLogin h2{
+    margin: 0;
+    color: #ffffff;
+}
+
+.containerLogin p{
+    color: #ffffff;
+}
+
+.recoverPassword{
+    display: block;
+    margin: 0.5em auto;
+    background: transparent;
+    color: #f9f9f9;
+    border: none;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.recoverPassword:hover{
+    font-size: 0.9em;
+}
