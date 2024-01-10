@@ -3,12 +3,8 @@ import styles from "./Cards.module.css"
 import { BsPencil, BsFillTrashFill } from "react-icons/bs"
 import Numeral from "../layout/Numeral"
 
-export default function Cards({id, name, budget, category, handleRemove, cost}){
+export default function Cards({name, budget, category, cost}){
   
-  const remove = (e) => {
-    e.preventDefault()
-    handleRemove(id)
-  }
   
   return(
         <div className={styles.projectCard}>
@@ -25,10 +21,10 @@ export default function Cards({id, name, budget, category, handleRemove, cost}){
             <span className={`${styles[category.toLowerCase()]}`}></span>{category}
           </p>
           <div className={styles.cardActions}>
-            <Link to={`/project/${id}`}>
+            <Link to="/">
                 <BsPencil/>Detalhe     
             </Link>
-            <button onClick={remove}>
+            <button>
                 <BsFillTrashFill/>Excluir
             </button>
           </div>
