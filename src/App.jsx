@@ -11,7 +11,9 @@ import Login from './pages/Login/Login'
 import Company from './pages/Company/Company'
 import Contact from './pages/Contact/Contact'
 import Welcome from './pages/Welcome/Welcome'
+import CreateProject from './pages/CreateProject/CreateProject'
 import './App.css'
+
 
 
 
@@ -51,6 +53,7 @@ function App() {
                     <Route path="/Register" element={!user ? <Register/> : <Navigate to="/Welcome"/>}/>
                     <Route path="/Login" element={!user ? <Login/> : <Navigate to="/"/>}/>
                     <Route path="/Welcome" element={user ? <Welcome/> : <Navigate to="/Login"/>}/>
+                    <Route path="/CreateProject" element={user ? <CreateProject/> : <Navigate to="/Login"/>}/>
                     <Route path="/Company" element={<Company/>}/>
                     <Route path="/Contact" element={<Contact/>}/>
                   </Routes>

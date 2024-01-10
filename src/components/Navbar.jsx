@@ -57,7 +57,7 @@ export default function Navbar(){
                                 <Link to="/Projects">Projetos</Link>
                             </li>
                             <li onClick={handleLinkClick}>
-                                <Link to="/CriarProjeto">Criar Projeto</Link>
+                                <Link to="/CreateProject">Criar Projeto</Link>
                             </li>
                         </>
                     )}
