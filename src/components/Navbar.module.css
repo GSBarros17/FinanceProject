@@ -49,6 +49,20 @@
     border-bottom: 1px solid #FFD00D;
 }
 
+.list button{
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    color: #ffffff;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.list button:hover{
+    color: #FFD00D;
+    border-bottom: 1px solid #FFD00D;
+}
+
 @media screen and (min-width: 1540px){
 
     .logoNavbar{
