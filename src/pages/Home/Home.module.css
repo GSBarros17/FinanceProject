@@ -17,19 +17,16 @@
 }
 
 .containerHome p {
-    margin-bottom: .5em;
+    margin-bottom: 1em;
     font-size: 1.2rem;
     font-weight: 500;
     color: #4a4a4a;
 }
 
-.containerHome a {
-    margin: 1em;
-}
-
 .imgHome{
     width: 15em;
-    margin: 1em 0;
+    margin: 1.5em auto;
+    display: block;
 }
 
 @media screen and (max-width: 800px){
