@@ -3,6 +3,7 @@ import { useAuthValue } from "../../context/AuthContext"
 import styles from "./Home.module.css"
 import ImgBanner from "../../img/img1.png"
 
+
 export default function Home(){
 
     const {user} = useAuthValue()

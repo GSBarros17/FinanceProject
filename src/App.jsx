@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { AuthProvider } from "./context/AuthContext"
 import { onAuthStateChanged } from 'firebase/auth'
 import useAuthentication from './hooks/useAuthentication'
+import Loading from "./components/Loading"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 import Home from "./pages/Home/Home"
@@ -37,7 +38,7 @@ function App() {
   }, [auth])
 
   if(loadingUser){
-    return <p>carregando...</p>
+    return <Loading/>
   }
 
 
