@@ -5,11 +5,34 @@ export default function Projects(){
     return(
         <div className={styles.containerProject}>
             <h1>Projetos</h1>
-            <Cards
-                name={"Projeto1"}
-                price={10000}
-                category={"Design"}
-            />
+            <div className={styles.containerCards}>
+                <Cards
+                    name={"PlutoPlutoPlutoPluto"}
+                    price={10000}
+                    category={"Design"}
+                />
+                <Cards
+                    name={"PlutoPlutoPlutoPluto"}
+                    price={10000}
+                    category={"Design"}
+                />
+                <Cards
+                    name={"PlutoPlutoPlutoPluto"}
+                    price={10000}
+                    category={"Design"}
+                />
+                <Cards
+                    name={"PlutoPlutoPlutoPluto"}
+                    price={10000}
+                    category={"Design"}
+                />
+                <Cards
+                    name={"PlutoPlutoPlutoPluto"}
+                    price={10000}
+                    category={"Design"}
+                />
+            </div>
+            
         </div>
     )
 }

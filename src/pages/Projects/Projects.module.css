@@ -3,3 +3,10 @@
     margin-bottom: 2em;
     padding: 0 2em;
 }
+
+.containerCards{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 1em;
+}
