@@ -15,9 +15,8 @@ export default function CreateProject(){
     }
 
     return(
-        <div>
-            <h1>Criar post</h1>
-            <p className={styles.textCreatePost}>Compartilhe suas experiências com outras pessoas!</p>
+        <div className={styles.containerCreateProject}>
+            <h1>Criar Projeto</h1>
             <form onSubmit={handleSubmit}>
                 <label>
                     <span>Titulo do Projeto:</span>
@@ -46,8 +45,9 @@ export default function CreateProject(){
                         value={categories}
                         onChange={(e) => setCategories(e.target.value)}
                     >
-                        <option value="infra">Infraestrutura</option>
-                        <option value="desenvolvimento">Desenvolvimento</option>
+                        <option value=""></option>
+                        <option value="Infraestrutura">Infraestrutura</option>
+                        <option value="Desenvolvimento">Desenvolvimento</option>
                         <option value="Design">Design</option>
                         <option value="Planejamento">Planejameto</option>
                         <option value="Manutenção">Manutenção</option>
