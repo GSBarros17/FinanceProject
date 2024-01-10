@@ -25,6 +25,7 @@
 
 .welcomeCard h2{
     margin: .5em;
+    padding: 0 0.2em;
     color: #ffffff;
     text-decoration: underline 2px #FFD00D;
     background-color: #191919;

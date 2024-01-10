@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom"
 import { FaBars } from "react-icons/fa";
 import { useState, useEffect, useRef } from "react"
+import useAuthetication from "../hooks/useAuthentication"
+import { useAuthValue } from "../context/AuthContext"
 import styles from "./Navbar.module.css"
 import logo from "../img/logo.svg"
 
 export default function Navbar(){
     
+    const { user } = useAuthValue()
+    const { logout } = useAuthetication()
     const [hideNavbar, setHideNavbar] = useState("false")
 
     const toggleClasse = () => {
@@ -47,21 +51,37 @@ export default function Navbar(){
                     <li onClick={handleLinkClick}>
                         <Link to="/">Home</Link>
                     </li>
+                    {user && (
+                        <>
+                            <li onClick={handleLinkClick}>
+                                <Link to="/Projects">Projetos</Link>
+                            </li>
+                            <li onClick={handleLinkClick}>
+                                <Link to="/CriarProjeto">Criar Projeto</Link>
+                            </li>
+                        </>
+                    )}
                     <li onClick={handleLinkClick}>
                         <Link to="/Company">Empresa</Link>
                     </li>
                     <li onClick={handleLinkClick}>
-                        <Link to="/Projects">Projetos</Link>
-                    </li>
-                    <li onClick={handleLinkClick}>
                         <Link to="/Contact">Contato</Link>
                     </li>
-                    <li onClick={handleLinkClick}>
-                        <Link to="/Register">Criar Conta</Link>
-                    </li>  
-                    <li onClick={handleLinkClick}>
-                        <Link to="/Login">Login</Link>
-                    </li>  
+                    {!user && (
+                        <>
+                            <li onClick={handleLinkClick}>
+                                <Link to="/Register">Criar Conta</Link>
+                            </li>  
+                            <li onClick={handleLinkClick}>
+                                <Link to="/Login">Login</Link>
+                            </li>
+                        </>
+                    )}
+                    {user && (
+                        <li>
+                            <button onClick={logout}>Sair</button>
+                        </li>
+                    )}
                 </ul>
             </nav>
         </div>
