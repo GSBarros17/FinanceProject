@@ -13,6 +13,7 @@ export default function Welcome(){
                 <p>Acesse nossa Home ou crie o seu primeiro projeto;</p>
                 <div className={styles.linksContainer}>
                     <Link to="/" className="btnForm">Home</Link>
+                    <Link to="/CreateProject" className="btnForm">Criar Projeto</Link>
                 </div>
             </div>
         </div>
