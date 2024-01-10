@@ -7,6 +7,7 @@ export default function CreateProject(){
     const [price, setPrice] = useState("null")
     const [categories, setCategories] = useState("")
     const [formError, setFormError] = useState("")
+    
 
     const handleSubmit = (e) =>{
         e.preventDefault()
