@@ -1,4 +1,7 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import { useAuthValue } from "../../context/AuthContext"
+import { useInsertDocument } from "../../hooks/useInsertDocument"
 import styles from "./CreateProject.module.css"
 
 export default function CreateProject(){
@@ -7,12 +10,33 @@ export default function CreateProject(){
     const [price, setPrice] = useState("null")
     const [categories, setCategories] = useState("")
     const [formError, setFormError] = useState("")
+    const {insertDocument, response} = useInsertDocument("projects")
+    const {user} = useAuthValue()
+    const navigate = useNavigate()
     
 
     const handleSubmit = (e) =>{
         e.preventDefault()
         setFormError("")
-       
+        
+        if(!title || !price || !categories){
+            setFormError("Por favor, preencha todos os campos!")
+            return
+        }
+
+        if(formError){
+            return
+        }
+        
+        insertDocument({
+            title,
+            price,
+            categories,
+            uid: user.uid,
+            createdBy: user.displayName,
+        })
+        
+        navigate("/")
     }
 
     return(
@@ -54,8 +78,10 @@ export default function CreateProject(){
                         <option value="Manutenção">Manutenção</option>
                     </select>
                 </label>
-                <button className="btnForm">Cadastrar</button>
+                {!response.loading && <button className="btnForm">Cadastrar</button>}
+                {response.loading && <button className="btnForm">Aguarde...</button>}
             </form>
+            {response.error && <h4 className="err">{response.error}</h4>}
             {formError && <h4 className="err">{formError}</h4>}
         </div>
     )
