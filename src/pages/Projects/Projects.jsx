@@ -14,7 +14,10 @@ export default function Projects(){
         
     return(
         <div className={styles.containerProject}>
-            <h1>Projetos</h1>
+            <div className={styles.headerProject}>
+                <h1>Projetos</h1>
+                <Link className="btnForm" to="/CreatePost">Criar Projeto</Link>
+            </div>
             {projects && projects.length === 0 ? (
                 <div className={styles.noPosts}>
                     <p>Você não possui projetos</p>
