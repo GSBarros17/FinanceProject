@@ -36,7 +36,7 @@ export default function CreateProject(){
             createdBy: user.displayName,
         })
         
-        navigate("/")
+        navigate("/Projects")
     }
 
     return(
