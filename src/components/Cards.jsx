@@ -18,7 +18,7 @@ export default function Cards({name, price, categories, cost}){
             <span>Total utilizado: R$</span><Numeral format="0,000.00">{cost}</Numeral>
           </p>
           <p className={styles.categoryText}>
-            <span className={`${styles[categories]}`}></span>{categories}
+            <span className={`${styles[categories.toLowerCase()]}`}></span>{categories}
           </p>
           <div className={styles.cardActions}>
             <Link to="/">
