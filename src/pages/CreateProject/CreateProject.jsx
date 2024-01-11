@@ -51,6 +51,7 @@ export default function CreateProject(){
                         placeholder="Digite o nome do projeto"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
+                        maxLength={35}
                     />
                 </label>
                 <label>
