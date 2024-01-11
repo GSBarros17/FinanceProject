@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom"
 import styles from "./Cards.module.css"
 import { BsPencil, BsFillTrashFill } from "react-icons/bs"
+import { useDeleteDocument } from "../hooks/useDeleteDocument";
 import Numeral from "../components/Numeral"
 
 export default function Cards({project}){
   
-  
+  const {deleteDocument} = useDeleteDocument("projects")
+
   return(
         <div className={styles.projectCard}>
           <div className={styles.tittleCard}>
@@ -24,7 +26,7 @@ export default function Cards({project}){
             <Link to="/">
                 <BsPencil/>Detalhe     
             </Link>
-            <button>
+            <button onClick={()=> deleteDocument(project.id)}>
                 <BsFillTrashFill/>Excluir
             </button>
           </div>

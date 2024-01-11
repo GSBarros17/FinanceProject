@@ -9,14 +9,9 @@ export default function Projects(){
     
     const {user} = useAuthValue()
     const uid = user.uid
-    console.log(uid)
     const {documents: projects, loading} = useFetchDocuments("projects", uid)
-    console.log(projects)
     
-    // if(loading){
-    //     return <Loading/>
-    // }
-    
+        
     return(
         <div className={styles.containerProject}>
             <h1>Projetos</h1>
