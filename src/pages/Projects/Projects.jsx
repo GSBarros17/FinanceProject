@@ -9,27 +9,37 @@ export default function Projects(){
                 <Cards
                     name={"PlutoPlutoPlutoPluto"}
                     price={10000}
-                    category={"Design"}
+                    categories={"design"}
                 />
                 <Cards
                     name={"PlutoPlutoPlutoPluto"}
                     price={10000}
-                    category={"Design"}
+                    categories={"infraestrutura"}
                 />
                 <Cards
                     name={"PlutoPlutoPlutoPluto"}
                     price={10000}
-                    category={"Design"}
+                    categories={"desenvolvimento"}
                 />
                 <Cards
                     name={"PlutoPlutoPlutoPluto"}
                     price={10000}
-                    category={"Design"}
+                    categories={"planejamento"}
                 />
                 <Cards
                     name={"PlutoPlutoPlutoPluto"}
                     price={10000}
-                    category={"Design"}
+                    categories={"manutenção"}
+                />
+                <Cards
+                    name={"PlutoPlutoPlutoPluto"}
+                    price={10000}
+                    categories={"Design"}
+                />
+                <Cards
+                    name={"PlutoPlutoPlutoPluto"}
+                    price={10000}
+                    categories={"Design"}
                 />
             </div>
             

@@ -1,6 +1,7 @@
 .projectCard{
-    width: 90%;
+    width: 20em;
     padding: 0em .5em 1.5em .5em;
+    margin: 0em auto 1em auto;
     background-color: #171717;
     border-radius: 10px;
     display: flex;
@@ -19,6 +20,7 @@
     border-radius: 10px;
     padding: 0.5em;
     margin-bottom: 1em;
+    word-break: break-all;
     text-align: center;
     font-size: 1.2em;
     font-weight: 800;
@@ -47,7 +49,7 @@
     background-color: #f9f9f9;
 }
 
-.categoryText .infra{
+.categoryText .infraestrutura{
     background-color: #4bc1df;
 }
 
