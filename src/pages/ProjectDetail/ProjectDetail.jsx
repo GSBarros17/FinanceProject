@@ -1,5 +1,7 @@
+import { useState } from "react"
 import { useParams } from "react-router-dom"
 import { useFetchDocument } from "../../hooks/useFetchDocument"
+import Numeral from "../../components/Numeral"
 import Loading from "../../components/Loading"
 import styles from "./ProjectDetail.module.css"
 
@@ -7,12 +9,37 @@ export default function ProjectDetail(){
     
     const { id } = useParams()
     const {document: project, loading} = useFetchDocument("projects", id)
-    
+    const [showEditForm, setShowEditForm] = useState(false)
+
+    function toggleEditForm(){
+        setShowEditForm(!showEditForm)
+    }
+
     return(
         <div className={styles.containerProjectDetail}>
             {loading && <Loading/>}
             {project && (
-                <h1>{project.title}</h1>
+                <>
+                    <div>
+                        <h1>{project.title}</h1>
+                        <button className="btnForm" onClick={toggleEditForm}>
+                        {!showEditForm ? "Editar Projeto" : "Fechar"}
+                        </button>
+                    </div>
+                    {!showEditForm ? (
+                        <div>
+                            <p>Categoria: {project.categories}</p>  
+                            <p>Orçamento R$: <Numeral format="0,000.00">{project.price}</Numeral></p>
+                            <p>Utilizado R$: <Numeral format="0,000.00">{project.cost}</Numeral></p>
+                        </div>
+                    ) : (
+                        <div>
+                            Formulario de edição
+                        </div>
+                    )}
+                    
+                    
+                </>
             )}
             
         </div>
