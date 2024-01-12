@@ -1,3 +1,7 @@
+hr{
+    border: 2px solid #787878;
+}
+
 .containerProjectDetail{
     margin-top: 6em;
     margin-bottom: 2em;
@@ -9,6 +13,14 @@
     margin-bottom: 0;
 }
 
+.serviceFormContainer{
+    min-height: 30vh;
+}
+
 .serviceFormContainer h2{
     margin-bottom: 0;
+}
+
+.serviceContainer{
+    min-height: 30vh;
 }
