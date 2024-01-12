@@ -11,6 +11,9 @@ export default function ProjectDetail(){
     const {document: project, loading} = useFetchDocument("projects", id)
     const [showEditForm, setShowEditForm] = useState(false)
     const [showServiceForm, setShowServiceForm] = useState(false)
+    const [title, setTitle] = useState("")
+    const [price, setPrice] = useState("null")
+    const [categories, setCategories] = useState("")
 
     function toggleEditForm(){
         setShowEditForm(!showEditForm)
@@ -18,6 +21,10 @@ export default function ProjectDetail(){
 
     function toggleServiceForm(){
         setShowServiceForm(!showServiceForm)
+    }
+
+    function handleSubmit(e){
+        e.precentDefault()
     }
 
     return(
@@ -39,7 +46,45 @@ export default function ProjectDetail(){
                         </div>
                     ) : (
                         <div>
-                            Formulario de edição
+                            <form onSubmit={handleSubmit}>
+                                <label>
+                                    <span>Titulo do Projeto:</span>
+                                    <input 
+                                        type="text"
+                                        name="Name_project" 
+                                        placeholder="Digite o nome do projeto"
+                                        value={title}
+                                        onChange={(e) => setTitle(e.target.value)}
+                                        maxLength={35}
+                                    />
+                                </label>
+                                <label>
+                                    <span>Custo total:</span>
+                                    <input 
+                                        type="number"
+                                        name="Value_project"
+                                        placeholder="Digite o valor total do projeto"
+                                        value={price}
+                                        onChange={(e) => setPrice(e.target.value)}
+                                    />
+                                </label>
+                                <label>
+                                    <span>Categoria:</span>
+                                    <select 
+                                        name="categories" 
+                                        value={categories}
+                                        onChange={(e) => setCategories(e.target.value)}
+                                    >
+                                        <option value=""></option>
+                                        <option value="Infraestrutura">Infraestrutura</option>
+                                        <option value="Desenvolvimento">Desenvolvimento</option>
+                                        <option value="Design">Design</option>
+                                        <option value="Planejamento">Planejameto</option>
+                                        <option value="Manutenção">Manutenção</option>
+                                    </select>
+                                </label>
+                                <button className="btnForm">Editar</button>
+                            </form>
                         </div>
                     )}  
                 </>

@@ -13,6 +13,26 @@ hr{
     margin-bottom: 0;
 }
 
+.containerProjectDetail form{
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    padding: 0;
+    margin: 2em 0;
+}
+
+.containerProjectDetail input{
+    border: 2px solid #191919;
+}
+
+.containerProjectDetail select{
+    border: 2px solid #191919;
+}
+
+.containerProjectDetail span{
+    color: #191919;
+}
+
 .serviceFormContainer{
     min-height: 30vh;
 }
