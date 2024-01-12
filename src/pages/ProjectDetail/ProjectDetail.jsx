@@ -10,9 +10,14 @@ export default function ProjectDetail(){
     const { id } = useParams()
     const {document: project, loading} = useFetchDocument("projects", id)
     const [showEditForm, setShowEditForm] = useState(false)
+    const [showServiceForm, setShowServiceForm] = useState(false)
 
     function toggleEditForm(){
         setShowEditForm(!showEditForm)
+    }
+
+    function toggleServiceForm(){
+        setShowServiceForm(!showServiceForm)
     }
 
     return(
@@ -38,7 +43,19 @@ export default function ProjectDetail(){
                         </div>
                     )}  
                 </>
-            )}  
+            )}
+            <hr />
+            <div className={styles.serviceFormContainer}>
+                <h2>Adicione Serviços</h2>
+                <button className="btnForm" onClick={toggleServiceForm}>
+                    {!showServiceForm ? "Criar Serviço" : "Fechar"}
+                </button>
+                {showServiceForm && (
+                    <div>
+                        Formulario do serviço
+                    </div>
+                )}
+            </div>
         </div>
     )
 }
