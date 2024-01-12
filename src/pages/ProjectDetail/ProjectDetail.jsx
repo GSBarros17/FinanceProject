@@ -36,12 +36,9 @@ export default function ProjectDetail(){
                         <div>
                             Formulario de edição
                         </div>
-                    )}
-                    
-                    
+                    )}  
                 </>
-            )}
-            
+            )}  
         </div>
     )
 }

@@ -1,4 +1,14 @@
 .containerProjectDetail{
     margin-top: 6em;
     margin-bottom: 2em;
+    padding: 0em 2em;
+}
+
+.containerProjectDetail h1{
+    text-decoration: underline #FFD00D;
+    margin-bottom: 0;
+}
+
+.containerProjectDetail button{
+    margin: 1em 0;
 }
