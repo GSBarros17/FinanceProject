@@ -56,6 +56,10 @@ export default function ProjectDetail(){
                     </div>
                 )}
             </div>
+            <hr />
+            <div className={styles.serviceContainer}>
+                <h2>Serviços</h2>
+            </div>
         </div>
     )
 }
