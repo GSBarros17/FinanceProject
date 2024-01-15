@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { useFetchDocument } from "../../hooks/useFetchDocument"
 import Numeral from "../../components/Numeral"
@@ -14,6 +14,14 @@ export default function ProjectDetail(){
     const [title, setTitle] = useState("")
     const [price, setPrice] = useState("null")
     const [categories, setCategories] = useState("")
+
+    useEffect(() => {
+        if(project){
+            setTitle(project.title)
+            setPrice(project.price)
+            setCategories(project.categories)
+        }
+    }, [project])
 
     function toggleEditForm(){
         setShowEditForm(!showEditForm)
