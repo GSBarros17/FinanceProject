@@ -6,7 +6,7 @@ import { useUpdateDocument } from "../../hooks/useUpdateDocument"
 import { useInsertDocument } from "../../hooks/useInsertDocument"
 import { useAuthValue } from "../../context/AuthContext"
 import Numeral from "../../components/Numeral"
-import Cards from "../../components/Cards"
+import CardsServices from "../../components/CardsServices"
 import Loading from "../../components/Loading"
 import styles from "./ProjectDetail.module.css"
 
@@ -227,7 +227,7 @@ export default function ProjectDetail(){
                     <div className={styles.containerCards}>
                     {loading && <Loading/>}
                     {services && services.map((service)=> (
-                        <Cards key={service.id} project={service} />
+                        <CardsServices key={service.id} service={service} />
                     ))}
                     </div>
                 )}    
