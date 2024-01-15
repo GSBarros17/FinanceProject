@@ -141,7 +141,41 @@ export default function ProjectDetail(){
                 </button>
                 {showServiceForm && (
                     <div>
-                        Formulario do serviço
+                        <form onSubmit={handleSubmitService}>
+                            <label>
+                                <span>Titulo do Serviço:</span>
+                                <input 
+                                    type="text"
+                                    name="Name_service" 
+                                    placeholder="Digite o nome do serviço"
+                                    value={titleService}
+                                    onChange={(e) => setTitleService(e.target.value)}
+                                    maxLength={35}
+                                />
+                            </label>
+                            <label>
+                                <span>Custo do serviço:</span>
+                                <input 
+                                    type="number"
+                                    name="Cost_service"
+                                    placeholder="Digite o valor total do serviço"
+                                    value={cost}
+                                    onChange={(e) => setCost(e.target.value)}
+                                />
+                            </label>
+                            <label>
+                                <span>Categoria:</span>
+                                <textarea 
+                                    name="body" 
+                                    placeholder="Detalhes do serviço"
+                                    value={description}
+                                    onChange={(e) => setDescription(e.target.value)}
+                                ></textarea>
+                            </label>
+                            {response && <button className="btnForm">Criar Serviço</button>}
+                        </form>
+                        {response.error && <h4 className="err">{response.error}</h4>}
+                        {formError && <h4 className="err">{formError}</h4>}
                     </div>
                 )}
             </div>
