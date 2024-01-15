@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { useFetchDocument } from "../../hooks/useFetchDocument"
+import { useUpdateDocument } from "../../hooks/useUpdateDocument"
+import { useAuthValue } from "../../context/AuthContext"
 import Numeral from "../../components/Numeral"
 import Loading from "../../components/Loading"
 import styles from "./ProjectDetail.module.css"
+
 
 export default function ProjectDetail(){
     
@@ -14,6 +17,7 @@ export default function ProjectDetail(){
     const [title, setTitle] = useState("")
     const [price, setPrice] = useState("null")
     const [categories, setCategories] = useState("")
+    const [formError, setFormError] = useState("")
 
     useEffect(() => {
         if(project){
@@ -22,6 +26,9 @@ export default function ProjectDetail(){
             setCategories(project.categories)
         }
     }, [project])
+
+    const {updateDocument, respose} = useUpdateDocument("projects")
+    const {user} = useAuthValue()
 
     function toggleEditForm(){
         setShowEditForm(!showEditForm)
@@ -32,7 +39,33 @@ export default function ProjectDetail(){
     }
 
     function handleSubmit(e){
-        e.precentDefault()
+        e.preventDefault()
+        setFormError("")
+
+        if(!title || !price || !categories){
+            setFormError("preencha todos os campos!")
+            return
+        }
+
+        if(formError){
+            return
+        }
+        
+        const data = {
+            title,
+            price,
+            categories,
+            uid: user.uid
+        }
+
+        updateDocument(id, data)
+        .then(() => {
+            window.location.reload();
+        })
+        .catch((error) => {
+            console.error("Erro durante a atualização:", error);
+        });
+
     }
 
     return(
