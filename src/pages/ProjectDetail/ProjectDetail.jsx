@@ -89,7 +89,8 @@ export default function ProjectDetail(){
         insertDocument({
             titleService,
             cost,
-            description
+            description,
+            id: id
         })
 
         .then(() => {
