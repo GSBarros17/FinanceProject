@@ -8,6 +8,7 @@ import Loading from "../../components/Loading"
 import styles from "./ProjectDetail.module.css"
 
 
+
 export default function ProjectDetail(){
     
     const { id } = useParams()
@@ -27,7 +28,7 @@ export default function ProjectDetail(){
         }
     }, [project])
 
-    const {updateDocument, respose} = useUpdateDocument("projects")
+    const {updateDocument, response} = useUpdateDocument("projects")
     const {user} = useAuthValue()
 
     function toggleEditForm(){
@@ -124,8 +125,10 @@ export default function ProjectDetail(){
                                         <option value="Manutenção">Manutenção</option>
                                     </select>
                                 </label>
-                                <button className="btnForm">Editar</button>
+                                {response && <button className="btnForm">Salvar</button>}
                             </form>
+                            {response.error && <h4 className="err">{response.error}</h4>}
+                            {formError && <h4 className="err">{formError}</h4>}
                         </div>
                     )}  
                 </>
