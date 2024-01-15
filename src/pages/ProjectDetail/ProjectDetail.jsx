@@ -18,6 +18,9 @@ export default function ProjectDetail(){
     const [title, setTitle] = useState("")
     const [price, setPrice] = useState("null")
     const [categories, setCategories] = useState("")
+    const [titleService, setTitleService] = useState("")
+    const [cost, setCost] = useState("null")
+    const [description, setDescription] = useState("")
     const [formError, setFormError] = useState("")
 
     useEffect(() => {
@@ -67,6 +70,10 @@ export default function ProjectDetail(){
             console.error("Erro durante a atualização:", error);
         });
 
+    }
+
+    function handleSubmitService(e){
+        e.preventDefault()
     }
 
     return(

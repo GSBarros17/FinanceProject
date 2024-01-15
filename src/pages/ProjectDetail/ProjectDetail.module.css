@@ -29,6 +29,10 @@ hr{
     border: 2px solid #191919;
 }
 
+.containerProjectDetail textarea{
+    border: 2px solid #191919;
+}
+
 .containerProjectDetail span{
     color: #191919;
 }
