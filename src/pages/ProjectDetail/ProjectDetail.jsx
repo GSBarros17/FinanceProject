@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { useFetchDocument } from "../../hooks/useFetchDocument"
+import { useFetchDocuments } from "../../hooks/useFetchDocuments"
 import { useUpdateDocument } from "../../hooks/useUpdateDocument"
 import { useInsertDocument } from "../../hooks/useInsertDocument"
 import { useAuthValue } from "../../context/AuthContext"
 import Numeral from "../../components/Numeral"
+import Cards from "../../components/Cards"
 import Loading from "../../components/Loading"
 import styles from "./ProjectDetail.module.css"
 
@@ -14,6 +16,8 @@ export default function ProjectDetail(){
     
     const { id } = useParams()
     const {document: project, loading} = useFetchDocument("projects", id)
+    const {documents: services} = useFetchDocuments("services")
+    console.log(services)
     const {insertDocument} = useInsertDocument("services")
     const [showEditForm, setShowEditForm] = useState(false)
     const [showServiceForm, setShowServiceForm] = useState(false)
@@ -214,6 +218,19 @@ export default function ProjectDetail(){
             <hr />
             <div className={styles.serviceContainer}>
                 <h2>Serviços</h2>
+                {services && services.length === 0 ? (
+                    <div className={styles.noPosts}>
+                        <p>Você não possui serviços</p>
+                    
+                    </div>
+                ) : (
+                    <div className={styles.containerCards}>
+                    {loading && <Loading/>}
+                    {services && services.map((service)=> (
+                        <Cards key={service.id} project={service} />
+                    ))}
+                    </div>
+                )}    
             </div>
         </div>
     )
