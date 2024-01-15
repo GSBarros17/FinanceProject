@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { useFetchDocument } from "../../hooks/useFetchDocument"
 import { useUpdateDocument } from "../../hooks/useUpdateDocument"
+import { useInsertDocument } from "../../hooks/useInsertDocument"
 import { useAuthValue } from "../../context/AuthContext"
 import Numeral from "../../components/Numeral"
 import Loading from "../../components/Loading"
@@ -13,6 +14,7 @@ export default function ProjectDetail(){
     
     const { id } = useParams()
     const {document: project, loading} = useFetchDocument("projects", id)
+    const {insertDocument} = useInsertDocument("services")
     const [showEditForm, setShowEditForm] = useState(false)
     const [showServiceForm, setShowServiceForm] = useState(false)
     const [title, setTitle] = useState("")
@@ -74,6 +76,28 @@ export default function ProjectDetail(){
 
     function handleSubmitService(e){
         e.preventDefault()
+
+        if(!titleService || !cost || !description){
+            setFormError("Por favor, preencha todos os campos!")
+            return
+        }
+
+        if(formError){
+            return
+        }
+
+        insertDocument({
+            titleService,
+            cost,
+            description
+        })
+
+        .then(() => {
+            window.location.reload();
+        })
+        .catch((error) => {
+            console.error("Erro durante a atualização:", error);
+        });
     }
 
     return(
