@@ -4,7 +4,7 @@ import { BsPencil, BsFillTrashFill } from "react-icons/bs"
 import { useDeleteDocument } from "../hooks/useDeleteDocument";
 import Numeral from "../components/Numeral"
 
-export default function Cards({service}){
+export default function CardsServices({service}){
   
   const {deleteDocument} = useDeleteDocument("services")
 
@@ -14,11 +14,11 @@ export default function Cards({service}){
             <div className={styles.tittleCard}>
               <h4>{service.titleService}</h4>
             </div>
-            <p><span>Total utilizado:</span></p>
+            <p className={styles.textService}>Total utilizado:</p>
             <p>
               R$<Numeral format="0,000.00">{service.cost}</Numeral>
             </p>
-            <p><span>Descrição do serviço:</span></p>
+            <p className={styles.textService}>Descrição do serviço:</p>
             <p className={styles.categoryText}>
               {service.description}
             </p>

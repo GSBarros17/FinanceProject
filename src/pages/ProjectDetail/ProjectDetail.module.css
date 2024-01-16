@@ -49,6 +49,10 @@ hr{
     min-height: 30vh;
 }
 
+.serviceContainer span{
+    color: #FFD00D;
+}
+
 .containerServiceCards{
     display: flex;
     flex-wrap: wrap;
