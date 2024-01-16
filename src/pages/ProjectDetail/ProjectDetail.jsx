@@ -17,7 +17,7 @@ export default function ProjectDetail(){
     
     const { id } = useParams()
     const {document: project, loading} = useFetchDocument("projects", id)
-    const {documents: services} = useFetchDocuments("services")
+    const {documents: services} = useFetchDocuments("services", null, id)
     const {insertDocument} = useInsertDocument("services")
     const [showEditForm, setShowEditForm] = useState(false)
     const [showServiceForm, setShowServiceForm] = useState(false)
