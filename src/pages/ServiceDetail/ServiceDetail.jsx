@@ -61,12 +61,12 @@ export default function ServiceDetail(){
     }
     
     return(
-        <div className={styles.containerProjectDetail}>
+        <div className={styles.containerServiceDetail}>
             {loading && <Loading/>}
             {service && (
                 <>
                     <div>
-                        <h1>{service.title}</h1>
+                        <h1>{service.titleService}</h1>
                         <button className="btnForm" onClick={toggleEditForm}>
                         {!showEditForm ? "Editar Projeto" : "Fechar"}
                         </button>
