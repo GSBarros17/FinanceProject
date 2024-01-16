@@ -206,6 +206,7 @@ export default function ProjectDetail(){
                                     placeholder="Detalhes do serviço"
                                     value={description}
                                     onChange={(e) => setDescription(e.target.value)}
+                                    maxLength={300}
                                 ></textarea>
                             </label>
                             {response && <button className="btnForm">Criar Serviço</button>}
