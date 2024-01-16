@@ -24,7 +24,7 @@ export default function CardsServices({service}){
             </p>
           </div>
           <div className={styles.cardActions}>
-            <Link to={`/ProjectDetail/${service.id}`}>
+            <Link to={`/ServiceDetail/${service.id}`}>
                 <BsPencil/>Detalhe     
             </Link>
             <button onClick={()=> deleteDocument(service.id)}>
