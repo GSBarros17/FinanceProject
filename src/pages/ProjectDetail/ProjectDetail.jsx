@@ -224,7 +224,7 @@ export default function ProjectDetail(){
                     
                     </div>
                 ) : (
-                    <div className={styles.containerCards}>
+                    <div className={styles.containerServiceCards}>
                     {loading && <Loading/>}
                     {services && services.map((service)=> (
                         <CardsServices key={service.idService} service={service} />

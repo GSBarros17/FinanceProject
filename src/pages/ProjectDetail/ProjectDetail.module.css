@@ -48,3 +48,8 @@ hr{
 .serviceContainer{
     min-height: 30vh;
 }
+
+.containerServiceCards{
+    display: flex;
+    flex-wrap: wrap;
+}
