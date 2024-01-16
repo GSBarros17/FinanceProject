@@ -12,12 +12,12 @@ import styles from "./ProjectDetail.module.css"
 
 
 
+
 export default function ProjectDetail(){
     
     const { id } = useParams()
     const {document: project, loading} = useFetchDocument("projects", id)
-    const {documents: services} = useFetchDocuments("services", idService)
-    console.log(services)
+    const {documents: services} = useFetchDocuments("services")
     const {insertDocument} = useInsertDocument("services")
     const [showEditForm, setShowEditForm] = useState(false)
     const [showServiceForm, setShowServiceForm] = useState(false)
