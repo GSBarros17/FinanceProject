@@ -13,11 +13,13 @@ export default function Cards({service}){
           <div className={styles.tittleCard}>
             <h4>{service.titleService}</h4>
           </div>
+          <span>Total utilizado: R$</span>
           <p>
-            <span>Total utilizado: R$</span><Numeral format="0,000.00">{service.cost}</Numeral>
+            <Numeral format="0,000.00">{service.cost}</Numeral>
           </p>
+          <span>Descrição do serviço:</span>
           <p className={styles.categoryText}>
-            <span>Descrição do serviço:</span>{service.description}
+            {service.description}
           </p>
           <div className={styles.cardActions}>
             <Link to={`/ProjectDetail/${service.id}`}>

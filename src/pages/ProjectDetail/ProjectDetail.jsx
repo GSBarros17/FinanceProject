@@ -16,7 +16,7 @@ export default function ProjectDetail(){
     
     const { id } = useParams()
     const {document: project, loading} = useFetchDocument("projects", id)
-    const {documents: services} = useFetchDocuments("services")
+    const {documents: services} = useFetchDocuments("services", idService)
     console.log(services)
     const {insertDocument} = useInsertDocument("services")
     const [showEditForm, setShowEditForm] = useState(false)
@@ -94,7 +94,7 @@ export default function ProjectDetail(){
             titleService,
             cost,
             description,
-            id: id
+            idService: id
         })
 
         .then(() => {
@@ -227,7 +227,7 @@ export default function ProjectDetail(){
                     <div className={styles.containerCards}>
                     {loading && <Loading/>}
                     {services && services.map((service)=> (
-                        <CardsServices key={service.id} service={service} />
+                        <CardsServices key={service.idService} service={service} />
                     ))}
                     </div>
                 )}    

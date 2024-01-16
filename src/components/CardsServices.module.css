@@ -1,0 +1,64 @@
+.projectCard{
+    width: 20em;
+    padding: 0em .5em 1.5em .5em;
+    margin: 0em auto 1em auto;
+    background-color: #171717;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tittleCard{
+    width: 100%;
+    height: 100px;
+}
+
+.projectCard h4{
+    background-color: #FFD00D;
+    color: #171717;
+    border-radius: 10px;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    word-break: break-all;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.projectCard p{
+    margin-bottom: 1.5em;
+    color: #f9f9f9;
+}
+
+.projectCard p span{
+    font-weight: 700;
+}
+
+.cardActions{
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-around;
+}
+
+.cardActions a, .cardActions button{
+    padding: 0.5em 1em;
+    text-decoration: none;
+    font-size: 1em;
+    color: #f9f9f9;
+    background-color: #171717;
+    border: 2px solid #FFD00D;
+    border-radius: 10px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.cardActions a:hover, .cardActions button:hover{
+    color: #FFD00D;
+   
+}
+
+.cardActions svg{
+    margin-right: 0.5em;
+    font-size: 1em;
+}
