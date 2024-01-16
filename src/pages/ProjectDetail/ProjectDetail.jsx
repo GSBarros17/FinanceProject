@@ -227,8 +227,8 @@ export default function ProjectDetail(){
                 ) : (
                     <div className={styles.containerServiceCards}>
                     {loading && <Loading/>}
-                    {services && services.map((service)=> (
-                        <CardsServices key={service.idService} service={service} />
+                    {services && services.map((service, index) => (
+                        <CardsServices key={`${service.idService}_${index}`} service={service} />
                     ))}
                     </div>
                 )}    
