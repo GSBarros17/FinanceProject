@@ -19,6 +19,7 @@ export default function ProjectDetail(){
     const {document: project, loading} = useFetchDocument("projects", id)
     const {documents: services} = useFetchDocuments("services", null, id)
     const {insertDocument} = useInsertDocument("services")
+    const {updateDocument, response} = useUpdateDocument("projects")
     const [showEditForm, setShowEditForm] = useState(false)
     const [showServiceForm, setShowServiceForm] = useState(false)
     const [title, setTitle] = useState("")
@@ -28,9 +29,8 @@ export default function ProjectDetail(){
     const [cost, setCost] = useState("null")
     const [description, setDescription] = useState("")
     const [formError, setFormError] = useState("")
-    const {updateDocument, response} = useUpdateDocument("projects")
     const {user} = useAuthValue()
-    const totalServicesCost = services ? services.reduce((total, service) => total + parseFloat(service.cost), 0) : 0;
+    const totalServicesCost = services ? services.reduce((total, service) => total + parseFloat(service.cost), 0) : 0
     const projectPrice = parseFloat(price)
 
     useEffect(() => {
@@ -79,39 +79,50 @@ export default function ProjectDetail(){
 
     }
 
-    function handleSubmitService(e){
+    function handleSubmitService(e) {
         e.preventDefault()
-
-        const newCost = totalServicesCost + Number(cost)
-
-        if(!titleService || !cost || !description){
+    
+        const newCost = totalServicesCost + Number(cost);
+    
+        if (!titleService || !cost || !description) {
             setFormError("Por favor, preencha todos os campos!")
             return
         }
-        
-        if(newCost > projectPrice){
-            setFormError("Custo do serviço e maior que o orçamento do projeto!")
+    
+        if (newCost > projectPrice) {
+            setFormError("Custo do serviço é maior que o orçamento do projeto!")
             return
         }
-        
-
-        if(formError){
+    
+        if (formError) {
             return
         }
-
-        insertDocument({
+    
+        const newService = {
             titleService,
             cost,
             description,
-            idService: id
-        })
-
-        .then(() => {
-            window.location.reload();
-        })
-        .catch((error) => {
-            console.error("Erro durante a atualização:", error);
-        });
+            idService: id,
+        };
+    
+        insertDocument(newService)
+            .then(() => {
+                console.log("Serviço criado com sucesso!")
+                
+                const updatedProject = {
+                    ...project,
+                    cost: newCost,
+                };
+    
+                return updateDocument(id, updatedProject)
+            })
+            .then(() => {
+                console.log("Projeto atualizado com sucesso!")
+                window.location.reload()
+            })
+            .catch((error) => {
+                console.error("Erro durante a operação:", error)
+            })
     }
 
 

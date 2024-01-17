@@ -11,6 +11,7 @@ export default function Projects(){
     const uid = user.uid
     const {documents: projects, loading} = useFetchDocuments("projects", uid)
     
+    
         
     return(
         <div className={styles.containerProject}>
