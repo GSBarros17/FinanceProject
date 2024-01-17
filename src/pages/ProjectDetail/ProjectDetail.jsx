@@ -5,6 +5,8 @@ import { useFetchDocuments } from "../../hooks/useFetchDocuments"
 import { useUpdateDocument } from "../../hooks/useUpdateDocument"
 import { useInsertDocument } from "../../hooks/useInsertDocument"
 import { useAuthValue } from "../../context/AuthContext"
+import { BsFillArrowLeftSquareFill } from "react-icons/bs"
+import { Link } from "react-router-dom"
 import Numeral from "../../components/Numeral"
 import CardsServices from "../../components/CardsServices"
 import Loading from "../../components/Loading"
@@ -128,6 +130,11 @@ export default function ProjectDetail(){
 
     return(
         <div className={styles.containerProjectDetail}>
+            <div className="returnBtn">
+                <Link to="/projects">
+                    <BsFillArrowLeftSquareFill/>
+                </Link>
+            </div>
             {loading && <Loading/>}
             {project && (
                 <>

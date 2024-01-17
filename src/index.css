@@ -112,6 +112,15 @@ textarea:focus {
   opacity: 1;
 }
 
+.returnBtn{
+  font-size: 2em;
+}
+
+.returnBtn svg{
+  color: #171717;
+}
+
+
 @media screen and (max-width: 600px){
   form{
     width: 70%;

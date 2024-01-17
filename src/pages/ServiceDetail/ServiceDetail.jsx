@@ -2,6 +2,8 @@ import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { useFetchDocument } from "../../hooks/useFetchDocument"
 import { useUpdateDocument } from "../../hooks/useUpdateDocument"
+import { BsFillArrowLeftSquareFill } from "react-icons/bs"
+import { Link } from "react-router-dom"
 import styles from "./ServiceDetail.module.css"
 import Numeral from "../../components/Numeral"
 import Loading from "../../components/Loading"
@@ -14,13 +16,16 @@ export default function ServiceDetail(){
     const [titleService, setTitleService] = useState("")
     const [cost, setCost] = useState("null")
     const [description, setDescription] = useState("")
+    const [idService, setIdService] = useState("")
     const [formError, setFormError] = useState("")
+    console.log(idService)
 
     useEffect(() => {
         if(service){
             setTitleService(service.titleService)
             setCost(service.cost)
             setDescription(service.description)
+            setIdService(service.idService)
         }
     }, [service])
 
@@ -62,6 +67,11 @@ export default function ServiceDetail(){
     
     return(
         <div className={styles.containerServiceDetail}>
+            <div className="returnBtn">
+                <Link to={`/ProjectDetail/${idService}`}>
+                    <BsFillArrowLeftSquareFill/>
+                </Link>
+            </div>
             {loading && <Loading/>}
             {service && (
                 <>
