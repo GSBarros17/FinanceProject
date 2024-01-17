@@ -31,7 +31,7 @@ export default function ProjectDetail(){
     const {updateDocument, response} = useUpdateDocument("projects")
     const {user} = useAuthValue()
     const totalServicesCost = services ? services.reduce((total, service) => total + parseFloat(service.cost), 0) : 0;
-    
+    const projectPrice = parseFloat(price)
 
     useEffect(() => {
         if(project){
@@ -82,10 +82,14 @@ export default function ProjectDetail(){
     function handleSubmitService(e){
         e.preventDefault()
 
+        const newCost = totalServicesCost + Number(cost)
+
         if(!titleService || !cost || !description){
             setFormError("Por favor, preencha todos os campos!")
             return
-        } else if(totalServicesCost <= price){
+        }
+        
+        if(newCost > projectPrice){
             setFormError("Custo do serviço e maior que o orçamento do projeto!")
             return
         }
