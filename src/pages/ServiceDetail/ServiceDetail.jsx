@@ -73,7 +73,7 @@ export default function ServiceDetail(){
                     </div>
                     {!showEditForm ? (
                         <div>
-                            <p>Utilizado R$: <Numeral format="0,000.00">{service.cost}</Numeral></p>
+                            <p>Valor do serviço R$: <Numeral format="0,000.00">{service.cost}</Numeral></p>
                             <p>Descrição: {service.description}</p>  
                         </div>
                     ) : (
@@ -88,16 +88,6 @@ export default function ServiceDetail(){
                                         value={titleService}
                                         onChange={(e) => setTitleService(e.target.value)}
                                         maxLength={35}
-                                    />
-                                </label>
-                                <label>
-                                    <span>Custo do serviço:</span>
-                                    <input 
-                                        type="number"
-                                        name="Value_project"
-                                        placeholder="Digite o valor total do projeto"
-                                        value={cost}
-                                        onChange={(e) => setCost(e.target.value)}
                                     />
                                 </label>
                                 <label>
