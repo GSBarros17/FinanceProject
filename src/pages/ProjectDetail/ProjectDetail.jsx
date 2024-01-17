@@ -28,6 +28,10 @@ export default function ProjectDetail(){
     const [cost, setCost] = useState("null")
     const [description, setDescription] = useState("")
     const [formError, setFormError] = useState("")
+    const {updateDocument, response} = useUpdateDocument("projects")
+    const {user} = useAuthValue()
+    const totalServicesCost = services ? services.reduce((total, service) => total + parseFloat(service.cost), 0) : 0;
+    
 
     useEffect(() => {
         if(project){
@@ -36,9 +40,6 @@ export default function ProjectDetail(){
             setCategories(project.categories)
         }
     }, [project])
-
-    const {updateDocument, response} = useUpdateDocument("projects")
-    const {user} = useAuthValue()
 
     function toggleEditForm(){
         setShowEditForm(!showEditForm)
@@ -84,7 +85,11 @@ export default function ProjectDetail(){
         if(!titleService || !cost || !description){
             setFormError("Por favor, preencha todos os campos!")
             return
+        } else if(totalServicesCost <= price){
+            setFormError("Custo do serviço e maior que o orçamento do projeto!")
+            return
         }
+        
 
         if(formError){
             return
@@ -105,6 +110,7 @@ export default function ProjectDetail(){
         });
     }
 
+
     return(
         <div className={styles.containerProjectDetail}>
             {loading && <Loading/>}
@@ -120,7 +126,8 @@ export default function ProjectDetail(){
                         <div>
                             <p>Categoria: {project.categories}</p>  
                             <p>Orçamento R$: <Numeral format="0,000.00">{project.price}</Numeral></p>
-                            <p>Utilizado R$: <Numeral format="0,000.00">{project.cost}</Numeral></p>
+                            <p>Utilizado R$: <Numeral format="0,000.00">{totalServicesCost}</Numeral></p>
+                            <p>Saldo do projeto R$: <Numeral format="0,000.00">{project.price - totalServicesCost}</Numeral></p>
                         </div>
                     ) : (
                         <div>
