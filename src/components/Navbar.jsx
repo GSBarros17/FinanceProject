@@ -62,7 +62,7 @@ export default function Navbar(){
                         </>
                     )}
                     <li onClick={handleLinkClick}>
-                        <Link to="/Company">Empresa</Link>
+                        <Link to="/Company">Sobre</Link>
                     </li>
                     <li onClick={handleLinkClick}>
                         <Link to="/Contact">Contato</Link>
