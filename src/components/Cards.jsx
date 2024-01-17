@@ -19,6 +19,9 @@ export default function Cards({project}){
           <p>
             <span>Total utilizado: R$</span><Numeral format="0,000.00">{project.cost}</Numeral>
           </p>
+          <p>
+            <span>Saldo: R$</span><Numeral format="0,000.00">{project.price - project.cost}</Numeral>
+          </p>
           <p className={styles.categoryText}>
             <span className={`${styles[project.categories.toLowerCase()]}`}></span>{project.categories}
           </p>
