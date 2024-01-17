@@ -139,17 +139,17 @@ export default function ProjectDetail(){
             {project && (
                 <>
                     <div>
-                        <h1>{project.title}</h1>
+                        <h1>{title.toUpperCase()}</h1>
                         <button className="btnForm" onClick={toggleEditForm}>
                         {!showEditForm ? "Editar Projeto" : "Fechar"}
                         </button>
                     </div>
                     {!showEditForm ? (
                         <div>
-                            <p>Categoria: {project.categories}</p>  
-                            <p>Orçamento R$: <Numeral format="0,000.00">{project.price}</Numeral></p>
+                            <p>Categoria: {categories}</p>  
+                            <p>Orçamento R$: <Numeral format="0,000.00">{price}</Numeral></p>
                             <p>Utilizado R$: <Numeral format="0,000.00">{totalServicesCost}</Numeral></p>
-                            <p>Saldo do projeto R$: <Numeral format="0,000.00">{project.price - totalServicesCost}</Numeral></p>
+                            <p>Saldo do projeto R$: <Numeral format="0,000.00">{price - totalServicesCost}</Numeral></p>
                         </div>
                     ) : (
                         <div>
