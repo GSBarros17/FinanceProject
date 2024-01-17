@@ -18,7 +18,6 @@ export default function ServiceDetail(){
     const [description, setDescription] = useState("")
     const [idService, setIdService] = useState("")
     const [formError, setFormError] = useState("")
-    console.log(idService)
 
     useEffect(() => {
         if(service){
@@ -76,15 +75,15 @@ export default function ServiceDetail(){
             {service && (
                 <>
                     <div>
-                        <h1>{service.titleService}</h1>
+                        <h1>{titleService.toUpperCase()}</h1>
                         <button className="btnForm" onClick={toggleEditForm}>
                         {!showEditForm ? "Editar Projeto" : "Fechar"}
                         </button>
                     </div>
                     {!showEditForm ? (
                         <div>
-                            <p>Valor do serviço R$: <Numeral format="0,000.00">{service.cost}</Numeral></p>
-                            <p>Descrição: {service.description}</p>  
+                            <p>Valor do serviço R$: <Numeral format="0,000.00">{cost}</Numeral></p>
+                            <p>Descrição: {description}</p>  
                         </div>
                     ) : (
                         <div>
