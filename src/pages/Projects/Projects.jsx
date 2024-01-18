@@ -17,12 +17,12 @@ export default function Projects(){
         <div className={styles.containerProject}>
             <div className={styles.headerProject}>
                 <h1>Projetos</h1>
-                <Link className="btnForm" to="/CreatePost">Criar Projeto</Link>
+                <Link className="btnForm" to="/CreateProject">Criar Projeto</Link>
             </div>
             {projects && projects.length === 0 ? (
                 <div className={styles.noPosts}>
                     <p>Você não possui projetos</p>
-                    <Link className="btnForm" to="/CreatePost">Criar primeiro post</Link>
+                    <Link className="btnForm" to="/CreateProject">Criar primeiro projeto</Link>
                 </div>
             ) : (
                 <div className={styles.containerCards}>
