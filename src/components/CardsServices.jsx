@@ -15,17 +15,32 @@ export default function CardsServices({service}){
   const {deleteDocument} = useDeleteDocument("services")
   const {updateDocument} = useUpdateDocument("projects", id)
   const [cost, setCost] = useState("null")
-  const costService = Number(service.cost)
-  let newCost = cost - costService
-
-  console.log(newCost)
+  
   useEffect(() => {
     if(project){
         setCost(project.cost)
     }
   }, [project])
 
-  function handleDeleteService(){
+  function handleDeleteService(e){
+      e.preventDefault()
+
+      const costService = Number(service.cost)
+      let newCost = cost - costService
+    
+      const data = {
+        cost: newCost,
+      }
+      
+      updateDocument(id, data)
+      .then(() => {
+          window.location.reload();
+      })
+      .catch((error) => {
+          console.error("Erro durante a atualização:", error);
+      });
+
+      deleteDocument(service.id)
 
   }
 
@@ -48,7 +63,7 @@ export default function CardsServices({service}){
             <Link to={`/ServiceDetail/${service.id}`}>
                 <BsPencil/>Detalhe     
             </Link>
-            <button onClick={()=> deleteDocument(service.id)}>
+            <button onClick={handleDeleteService}>
                 <BsFillTrashFill/>Excluir
             </button>
           </div>
