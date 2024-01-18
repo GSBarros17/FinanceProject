@@ -100,6 +100,16 @@ export default function ServiceDetail(){
                                     />
                                 </label>
                                 <label>
+                                    <span>Custo do serviço:</span>
+                                    <input 
+                                        type="number"
+                                        name="Value_project"
+                                        placeholder="Digite o valor total do projeto"
+                                        value={cost}
+                                        onChange={(e) => setCost(e.target.value)}
+                                    />
+                                </label>
+                                <label>
                                     <span>Descrição:</span>
                                     <textarea 
                                         name="body" 
