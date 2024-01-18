@@ -5,14 +5,12 @@ import { useUpdateDocument } from "../../hooks/useUpdateDocument"
 import { BsFillArrowLeftSquareFill } from "react-icons/bs"
 import { Link } from "react-router-dom"
 import styles from "./ServiceDetail.module.css"
-import Numeral from "../../components/Numeral"
 import Loading from "../../components/Loading"
 
 
 export default function ServiceDetail(){
     const { id } = useParams()
     const {document: service, loading} = useFetchDocument("services", id)
-    const [showEditForm, setShowEditForm] = useState(false)
     const [titleService, setTitleService] = useState("")
     const [cost, setCost] = useState("null")
     const [description, setDescription] = useState("")
@@ -30,10 +28,6 @@ export default function ServiceDetail(){
 
     const {updateDocument, response} = useUpdateDocument("services")
     
-
-    function toggleEditForm(){
-        setShowEditForm(!showEditForm)
-    }
 
     function handleSubmit(e){
         e.preventDefault()
@@ -73,19 +67,6 @@ export default function ServiceDetail(){
             </div>
             {loading && <Loading/>}
             {service && (
-                <>
-                    <div>
-                        <h1>{titleService.toUpperCase()}</h1>
-                        <button className="btnForm" onClick={toggleEditForm}>
-                        {!showEditForm ? "Editar Projeto" : "Fechar"}
-                        </button>
-                    </div>
-                    {!showEditForm ? (
-                        <div>
-                            <p>Valor do serviço R$: <Numeral format="0,000.00">{cost}</Numeral></p>
-                            <p>Descrição: {description}</p>  
-                        </div>
-                    ) : (
                         <div>
                             <form onSubmit={handleSubmit}>
                                 <label>
@@ -97,16 +78,6 @@ export default function ServiceDetail(){
                                         value={titleService}
                                         onChange={(e) => setTitleService(e.target.value)}
                                         maxLength={35}
-                                    />
-                                </label>
-                                <label>
-                                    <span>Custo do serviço:</span>
-                                    <input 
-                                        type="number"
-                                        name="Value_project"
-                                        placeholder="Digite o valor total do projeto"
-                                        value={cost}
-                                        onChange={(e) => setCost(e.target.value)}
                                     />
                                 </label>
                                 <label>
@@ -125,8 +96,6 @@ export default function ServiceDetail(){
                             {formError && <h4 className="err">{formError}</h4>}
                         </div>
                     )}  
-                </>
-            )}
         </div>
     )
 }
