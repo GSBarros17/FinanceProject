@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { useFetchDocument } from "../../hooks/useFetchDocument"
 import { useUpdateDocument } from "../../hooks/useUpdateDocument"
 import { BsFillArrowLeftSquareFill } from "react-icons/bs"
@@ -16,6 +16,7 @@ export default function ServiceDetail(){
     const [description, setDescription] = useState("")
     const [idService, setIdService] = useState("")
     const [formError, setFormError] = useState("")
+    const navigate = useNavigate()
 
     useEffect(() => {
         if(service){
@@ -50,7 +51,7 @@ export default function ServiceDetail(){
 
         updateDocument(id, data)
         .then(() => {
-            window.location.reload();
+            navigate(`/ProjectDetail/${idService}`)
         })
         .catch((error) => {
             console.error("Erro durante a atualização:", error);
