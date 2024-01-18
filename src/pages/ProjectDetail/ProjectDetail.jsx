@@ -60,6 +60,14 @@ export default function ProjectDetail(){
             return
         }
 
+        if (totalServicesCost > projectPrice) {
+            setFormError("Custo do serviço é maior que o orçamento do projeto!")
+            setTimeout(() => {
+                setFormError("");
+            }, 3000);
+            return
+        }
+
         if(formError){
             return
         }
