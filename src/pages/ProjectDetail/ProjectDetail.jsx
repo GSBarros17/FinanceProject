@@ -34,6 +34,7 @@ export default function ProjectDetail(){
     const {user} = useAuthValue()
     const totalServicesCost = services ? services.reduce((total, service) => total + parseFloat(service.cost), 0) : 0
     const projectPrice = parseFloat(price)
+    console.log(totalServicesCost)
 
     useEffect(() => {
         if(project){
@@ -83,8 +84,10 @@ export default function ProjectDetail(){
 
     function handleSubmitService(e) {
         e.preventDefault()
+        setFormError("")
     
-        const newCost = totalServicesCost + Number(cost);
+        let newCost = totalServicesCost + Number(cost);
+        console.log(newCost)
     
         if (!titleService || !cost || !description) {
             setFormError("Por favor, preencha todos os campos!")
@@ -93,6 +96,9 @@ export default function ProjectDetail(){
     
         if (newCost > projectPrice) {
             setFormError("Custo do serviço é maior que o orçamento do projeto!")
+            setTimeout(() => {
+                setFormError("");
+            }, 3000);
             return
         }
     

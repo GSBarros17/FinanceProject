@@ -16,7 +16,7 @@ export default function CardsServices({service}){
   const {updateDocument} = useUpdateDocument("projects", id)
   const [cost, setCost] = useState("null")
   const costService = Number(service.cost)
-  const newCost = cost - costService
+  let newCost = cost - costService
 
   console.log(newCost)
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function CardsServices({service}){
   }, [project])
 
   function handleDeleteService(){
-    
+
   }
 
   return(
