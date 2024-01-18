@@ -84,7 +84,7 @@ export default function ProjectDetail(){
             window.location.reload();
         })
         .catch((error) => {
-            console.error("Erro durante a atualização:", error);
+            console.error("Erro durante a atualização:", error)
         });
 
     }
@@ -103,7 +103,7 @@ export default function ProjectDetail(){
         if (newCost > projectPrice) {
             setFormError("Custo do serviço é maior que o orçamento do projeto!")
             setTimeout(() => {
-                setFormError("");
+                setFormError("")
             }, 3000);
             return
         }

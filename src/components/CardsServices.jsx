@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
 import { BsPencil, BsFillTrashFill } from "react-icons/bs"
 import { useParams } from "react-router-dom"
-import { useFetchDocument } from "../hooks/useFetchDocument";
-import { useDeleteDocument } from "../hooks/useDeleteDocument";
-import { useUpdateDocument } from "../hooks/useUpdateDocument";
+import { useFetchDocument } from "../hooks/useFetchDocument"
+import { useDeleteDocument } from "../hooks/useDeleteDocument"
+import { useUpdateDocument } from "../hooks/useUpdateDocument"
 import { Link } from "react-router-dom"
 import styles from "./CardsServices.module.css"
 import Numeral from "../components/Numeral"
@@ -15,7 +15,7 @@ export default function CardsServices({service}){
   const {deleteDocument} = useDeleteDocument("services")
   const {updateDocument} = useUpdateDocument("projects", id)
   const [cost, setCost] = useState("null")
-  console.log(cost)
+ 
   useEffect(() => {
     if(project){
         setCost(project.costServices)
@@ -27,17 +27,17 @@ export default function CardsServices({service}){
 
       const costService = Number(service.cost)
       let newCost = cost - costService
-      console.log(newCost)
+      
       const data = {
         costServices: newCost,
       }
       
       updateDocument(id, data)
       .then(() => {
-          window.location.reload();
+          window.location.reload()
       })
       .catch((error) => {
-          console.error("Erro durante a atualização:", error);
+          console.error("Erro durante a atualização:", error)
       });
 
       deleteDocument(service.id)
