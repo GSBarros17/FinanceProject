@@ -57,3 +57,10 @@ hr{
     display: flex;
     flex-wrap: wrap;
 }
+
+.warningInfo{
+    font-size: .8em;
+    font-weight: bold;
+    margin-top: 0;
+    color: #9c0808;
+}

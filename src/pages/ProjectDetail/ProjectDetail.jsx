@@ -232,6 +232,7 @@ export default function ProjectDetail(){
                             </label>
                             <label>
                                 <span>Custo do serviço:</span>
+                                <p className={styles.warningInfo}>**O valor do serviço não podera ser alterado depois de criado**</p>
                                 <input 
                                     type="number"
                                     name="Cost_service"
