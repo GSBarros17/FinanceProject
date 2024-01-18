@@ -15,10 +15,10 @@ export default function CardsServices({service}){
   const {deleteDocument} = useDeleteDocument("services")
   const {updateDocument} = useUpdateDocument("projects", id)
   const [cost, setCost] = useState("null")
-  
+  console.log(cost)
   useEffect(() => {
     if(project){
-        setCost(project.cost)
+        setCost(project.costServices)
     }
   }, [project])
 
@@ -27,9 +27,9 @@ export default function CardsServices({service}){
 
       const costService = Number(service.cost)
       let newCost = cost - costService
-    
+      console.log(newCost)
       const data = {
-        cost: newCost,
+        costServices: newCost,
       }
       
       updateDocument(id, data)

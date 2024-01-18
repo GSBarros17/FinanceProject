@@ -125,7 +125,7 @@ export default function ProjectDetail(){
                 
                 const updatedProject = {
                     ...project,
-                    cost: newCost,
+                    costServices: newCost,
                 };
     
                 return updateDocument(id, updatedProject)
