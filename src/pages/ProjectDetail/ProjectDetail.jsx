@@ -241,7 +241,7 @@ export default function ProjectDetail(){
                                 />
                             </label>
                             <label>
-                                <span>Categoria:</span>
+                                <span>Descrição do serviço:</span>
                                 <textarea 
                                     name="body" 
                                     placeholder="Detalhes do serviço"
