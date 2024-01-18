@@ -1,12 +1,33 @@
+import { useState, useEffect } from "react";
+import { BsPencil, BsFillTrashFill } from "react-icons/bs"
+import { useParams } from "react-router-dom"
+import { useFetchDocument } from "../hooks/useFetchDocument";
+import { useDeleteDocument } from "../hooks/useDeleteDocument";
+import { useUpdateDocument } from "../hooks/useUpdateDocument";
 import { Link } from "react-router-dom"
 import styles from "./CardsServices.module.css"
-import { BsPencil, BsFillTrashFill } from "react-icons/bs"
-import { useDeleteDocument } from "../hooks/useDeleteDocument";
 import Numeral from "../components/Numeral"
 
 export default function CardsServices({service}){
   
+  const { id } = useParams()
+  const {document: project} = useFetchDocument("projects", id)
   const {deleteDocument} = useDeleteDocument("services")
+  const {updateDocument} = useUpdateDocument("projects", id)
+  const [cost, setCost] = useState("null")
+  const costService = Number(service.cost)
+  const newCost = cost - costService
+
+  console.log(newCost)
+  useEffect(() => {
+    if(project){
+        setCost(project.cost)
+    }
+  }, [project])
+
+  function handleDeleteService(){
+    
+  }
 
   return(
         <div className={styles.serviceCard}>
