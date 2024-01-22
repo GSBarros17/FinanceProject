@@ -120,6 +120,58 @@ textarea:focus {
   color: #171717;
 }
 
+.btnModal{
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  border: 2px solid #FFD00D;
+  background-color: #191919;
+  margin-top: 1em;
+  margin: auto;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.btnModal:hover{
+  background-color: #FFD00D;
+  color: #000000;
+}
+
+.btnModal svg{
+  margin-right: .5em;
+}
+
+.modalContainer{
+  background-color: #171717;
+  color: #f9f9f9;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+  padding: 1em;
+  margin: 12em auto;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.modalDeleteHeader{
+  display: flex;
+  justify-content: space-between;
+}
+
+.modalDeleteHeader h2{
+  margin: 0;
+}
+
+.modalDeleteHeader button{
+  font-weight: bold;
+  font-size: 2em;
+  background-color: transparent;
+  border: none;
+  color: #d61212;
+  cursor: pointer;
+}
 
 @media screen and (max-width: 600px){
   form{

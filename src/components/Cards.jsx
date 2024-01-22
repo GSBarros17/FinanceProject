@@ -1,12 +1,23 @@
 import { Link } from "react-router-dom"
+import { useState } from "react";
 import styles from "./Cards.module.css"
-import { BsPencil, BsFillTrashFill } from "react-icons/bs"
+import { BsPencil, BsFillTrashFill, BsXCircle } from "react-icons/bs"
 import { useDeleteDocument } from "../hooks/useDeleteDocument";
+import Modal from "react-modal"
 import Numeral from "../components/Numeral"
 
 export default function Cards({project}){
   
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   const {deleteDocument} = useDeleteDocument("projects")
+
+  function openModal() {
+    setModalIsOpen(true);
+  }
+
+  function closeModal() {
+    setModalIsOpen(false);
+  }
 
   return(
         <div className={styles.projectCard}>
@@ -29,11 +40,26 @@ export default function Cards({project}){
             <Link to={`/ProjectDetail/${project.id}`}>
                 <BsPencil/>Detalhe     
             </Link>
-            <button onClick={()=> deleteDocument(project.id)}>
+            <button onClick={openModal}>
                 <BsFillTrashFill/>Excluir
             </button>
           </div>
+          <Modal
+            ariaHideApp={false}
+            isOpen={modalIsOpen}
+            onRequestClose={closeModal}
+            contentLabel="Example Modal"
+            className="modalContainer"
+          >
+            <div className="modalDeleteHeader">
+              <h2>Excluir Projeto</h2>
+              <button onClick={closeModal}><BsXCircle /></button>
+            </div>
+            <p>Após excluir o projeto, o mesmo não poderá ser recuperado!</p>
+            <button className="btnModal" onClick={()=> deleteDocument(project.id)}>
+                <BsFillTrashFill/>Excluir
+            </button>
+          </Modal>
         </div>
-       
     )
 }
