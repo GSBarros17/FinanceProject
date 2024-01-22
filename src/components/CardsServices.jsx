@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react"
-import { BsPencil, BsFillTrashFill } from "react-icons/bs"
+import { BsPencil, BsFillTrashFill, BsXCircle } from "react-icons/bs"
 import { useParams } from "react-router-dom"
 import { useFetchDocument } from "../hooks/useFetchDocument"
 import { useDeleteDocument } from "../hooks/useDeleteDocument"
 import { useUpdateDocument } from "../hooks/useUpdateDocument"
 import { Link } from "react-router-dom"
 import styles from "./CardsServices.module.css"
+import Modal from "react-modal"
 import PropTypes from "prop-types"
 import Numeral from "../components/Numeral"
 
@@ -16,12 +17,22 @@ export default function CardsServices({service}){
   const {deleteDocument} = useDeleteDocument("services")
   const {updateDocument} = useUpdateDocument("projects", id)
   const [cost, setCost] = useState("null")
+  const [modalIsOpen, setModalIsOpen] = useState(false);
  
   useEffect(() => {
     if(project){
         setCost(project.costServices)
     }
   }, [project])
+
+  function openModal() {
+    setModalIsOpen(true);
+  }
+
+  function closeModal() {
+    setModalIsOpen(false);
+  }
+
 
   function handleDeleteService(e){
       e.preventDefault()
@@ -64,10 +75,26 @@ export default function CardsServices({service}){
             <Link to={`/ServiceDetail/${service.id}`}>
                 <BsPencil/>Editar     
             </Link>
-            <button onClick={handleDeleteService}>
+            <button onClick={openModal}>
                 <BsFillTrashFill/>Excluir
             </button>
           </div>
+          <Modal
+            ariaHideApp={false}
+            isOpen={modalIsOpen}
+            onRequestClose={closeModal}
+            contentLabel="Example Modal"
+            className="modalContainer"
+          >
+            <div className="modalDeleteHeader">
+              <h2>Excluir Serviço</h2>
+              <button onClick={closeModal}><BsXCircle /></button>
+            </div>
+            <p>Após excluir o serviço, o mesmo não poderá ser recuperado!</p>
+            <button className="btnModal" onClick={handleDeleteService}>
+                <BsFillTrashFill/>Excluir
+            </button>
+          </Modal>
         </div>
        
     )
