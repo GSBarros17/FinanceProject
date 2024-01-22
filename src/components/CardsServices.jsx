@@ -61,7 +61,7 @@ export default function CardsServices({service}){
           </div>
           <div className={styles.cardActions}>
             <Link to={`/ServiceDetail/${service.id}`}>
-                <BsPencil/>Detalhe     
+                <BsPencil/>Editar     
             </Link>
             <button onClick={handleDeleteService}>
                 <BsFillTrashFill/>Excluir
