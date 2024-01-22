@@ -15,8 +15,17 @@ export default function Home(){
             {firstNameCapital && <h1>{firstNameCapital}, bem vindo ao <span>FINANCE</span></h1>}    
             {!firstNameCapital && <h1>Bem vindo ao <span>FINANCE</span></h1>}    
             <p>Com a Finance, você consegue criar e gerir seu projetos na área de técnologia.</p>
-            <p>Experimente, crie seu projeto agora mesmo!</p>
-            {user && <Link to="/CreateProject" className="btnForm">Criar Projeto</Link>}
+            {!user ? (
+                <>
+                    <p>Experimente, crie sua conta agora mesmo!</p>
+                    <Link to="/Register" className="btnForm">Criar Cadastro</Link>  
+                </> 
+            ) : (
+                <>
+                    <p>Experimente, crie seu projeto agora mesmo!</p>
+                    <Link to="/CreateProject" className="btnForm">Criar Projeto</Link>
+                </>     
+            )}
             <img className={styles.imgHome} src={ImgBanner} alt="banner principal finance" />
         </div>
     )
