@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom"
 import { useState } from "react";
-import styles from "./Cards.module.css"
 import { BsPencil, BsFillTrashFill, BsXCircle } from "react-icons/bs"
 import { useDeleteDocument } from "../hooks/useDeleteDocument";
+import styles from "./Cards.module.css"
+import PropTypes from "prop-types"
 import Modal from "react-modal"
 import Numeral from "../components/Numeral"
 
@@ -62,4 +63,14 @@ export default function Cards({project}){
           </Modal>
         </div>
     )
+}
+
+Cards.propTypes = {
+  project: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    costServices: PropTypes.number.isRequired,
+    categories: PropTypes.string.isRequired,
+  }).isRequired,
 }

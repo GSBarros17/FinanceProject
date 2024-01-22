@@ -6,6 +6,7 @@ import { useDeleteDocument } from "../hooks/useDeleteDocument"
 import { useUpdateDocument } from "../hooks/useUpdateDocument"
 import { Link } from "react-router-dom"
 import styles from "./CardsServices.module.css"
+import PropTypes from "prop-types"
 import Numeral from "../components/Numeral"
 
 export default function CardsServices({service}){
@@ -71,3 +72,12 @@ export default function CardsServices({service}){
        
     )
 }
+
+CardsServices.propTypes = {
+  service: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    titleService: PropTypes.string.isRequired,
+    cost: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
+  }).isRequired,
+};
