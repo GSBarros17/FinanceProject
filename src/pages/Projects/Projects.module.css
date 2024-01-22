@@ -32,3 +32,13 @@
     color: #4a4a4a;
     margin-bottom: 2em;
 }
+
+@media screen and (max-width: 800px){
+    .containerProject{
+        margin-top: 4em;
+    }
+
+    .headerProject a{
+        display: none;
+    }
+}

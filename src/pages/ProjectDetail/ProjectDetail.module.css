@@ -64,3 +64,13 @@ hr{
     margin-top: 0;
     color: #9c0808;
 }
+
+@media screen and (max-width: 800px){
+    .containerProjectDetail{
+        margin-top: 5em;
+    }
+    
+    .containerProjectDetail h1{
+        font-size: 1.5em;
+    }
+}
