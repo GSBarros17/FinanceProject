@@ -227,7 +227,7 @@ export default function ProjectDetail(){
                                     placeholder="Digite o nome do serviço"
                                     value={titleService}
                                     onChange={(e) => setTitleService(e.target.value)}
-                                    maxLength={25}
+                                    maxLength={30}
                                 />
                             </label>
                             <label>
