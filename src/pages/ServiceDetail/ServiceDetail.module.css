@@ -32,3 +32,11 @@
 .containerServiceDetail span{
     color: #191919;
 }
+
+@media screen and (max-width: 800px){
+    .containerServiceDetail{
+        margin-top: 5em;
+        padding: 0em 2em 1em 2em;
+    }
+    
+}
