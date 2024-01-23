@@ -34,3 +34,13 @@
         padding: 0em 1em;
     }
 }
+
+@media screen and (min-width: 1440px){
+    .containerHome{
+        margin-top: 6em;
+    }
+
+    .imgHome{
+        width: 20em;
+    }
+}
