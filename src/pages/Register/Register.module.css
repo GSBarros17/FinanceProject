@@ -20,3 +20,9 @@
         margin-top: 5em;
     }
 }
+
+@media screen and (min-width: 1440px){
+    .registerContainer{
+        margin-top: 10em;
+    }
+}
