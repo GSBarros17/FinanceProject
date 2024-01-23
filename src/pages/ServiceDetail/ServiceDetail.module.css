@@ -40,3 +40,10 @@
     }
     
 }
+
+@media screen and (min-width: 1440px){
+    .containerServiceDetail{
+        margin-top: 10em;
+    }
+    
+}
