@@ -72,6 +72,11 @@
     .list a {
         font-size: 1.5em;  
     }
+
+    .list button{
+        margin-top: 0.2em;
+        font-size: 1.5em;
+    }
   
 }
 
