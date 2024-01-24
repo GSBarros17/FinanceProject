@@ -47,6 +47,8 @@ A versão 1.0.0 do projeto encontra-se online, sendo hospedado na netlify e tend
 | Textos      | ![#4a4a4a](https://via.placeholder.com/10/4a4a4a?text=+) #4a4a4a , ![#f9f9f9](https://via.placeholder.com/10/f9f9f9?text=+) #f9f9f9, ![#ffffff](https://via.placeholder.com/10/ffffff?text=+) #ffffff, ![#000000](https://via.placeholder.com/10/000000?text=+) #000000, ![#ffd00d](https://via.placeholder.com/10/ffd00d?text=+) #ffd00d, ![#9c0808](https://via.placeholder.com/10/9c0808?text=+) #9c0808
 | Botões       | ![#191919](https://via.placeholder.com/10/191919?text=+) #191919, ![#ffd00d](https://via.placeholder.com/10/ffd00d?text=+) #ffd00d |
 | Bordas       | ![#ffd00d](https://via.placeholder.com/10/ffd00d?text=+) #ffd00d |
+| Mensagem Sucesso       | ![#26d612](https://via.placeholder.com/10/26d612?text=+) #26d612, ![#7dcd76](https://via.placeholder.com/10/7dcd76?text=+) #7dcd76 |
+| Mensagem Error       | ![#d61212](https://via.placeholder.com/10/d61212?text=+) #d61212, ![#d47c7c](https://via.placeholder.com/10/d47c7c?text=+) #d47c7c |
 
 
 ## Autor
