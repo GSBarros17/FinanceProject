@@ -14,10 +14,13 @@ O front-end do projeto foi construido apartir da biblioteca React e css puro, po
 
 
 
-## Demonstração
+## Funcionalidades
 
-Demostração do site.
-
+- Cadastro de usuário
+- Login
+- Criar Projeto e Serviço
+- Editar Projeto e Serviço
+- Excluir Projeto e Serviço
 
 ## Stack utilizada
 
